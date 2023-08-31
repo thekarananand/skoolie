@@ -64,3 +64,6 @@ div.form{
     display: block;
     float: left;
 }
+.opt1,.opt2{
+    display: block;
+}

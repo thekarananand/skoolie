@@ -1,0 +1,12 @@
+.top_bar{
+    display: flexbox;
+    color: blue;
+}
+.icon{
+    display: flex;
+}
+.right_opt{
+    display: flexbox;
+    align-items: ;
+
+}

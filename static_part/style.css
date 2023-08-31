@@ -1,0 +1,66 @@
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFF6E1FD;
+  border-radius: 10px;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: lightskyblue;}
+
+ul.topnav li a.active {background-color: white;
+}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+#date{
+    fill: rgba(255, 255, 255, 0.99);
+stroke-width: 1px;
+stroke: #000;
+}
+label{
+    color: #000;
+font-family: Rubik;
+font-size: 33.561px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.cman,.login_window{
+    display: flex;
+    max-width: 50%;
+}
+.flex{
+    display: flex; 
+}
+.profile,.barcode{
+    display: flex;
+    width: 15em;
+    height: 15em;
+    vertical-align:middle;
+}
+div.form{
+    align-items: center;
+
+}
+.tagline{
+    display: block;
+    float: left;
+}

@@ -1,0 +1,50 @@
+{% extends "skoolie/Layout.html" %}
+
+{% block title %}
+    Skoolie | Login
+{% endblock %}
+
+{% block CSS %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'skoolie/login.css' %}">
+{% endblock %}
+
+{% block BODY %}
+    {% load static %}
+
+    <div class="Main">
+
+        <nav>
+            <h2>Skoolie</h2>
+        </nav>
+
+        <div class="container">
+            {% load static %}
+            <div class="Doodle">
+                <img src="{% static 'skoolie/login/confused man.png' %}">
+                <h1>Let's manage all the chaos</h1>
+            </div>
+
+
+            <div class="IDcard">
+                <h2>College ID</h2>
+                <div class="innerDiv">
+                    <img src="{% static 'skoolie/login/sample_profile.png' %}">
+
+                    <form action="{% url 'dashboard' %}" method="POST">
+                        {% csrf_token %}
+                        <label for="username">Email</label>
+                        <input type="email" name="username" id="username">
+                        <label for="username">Password</label>
+                        <input type="password" name="password" id="password">
+                        <div><input type="submit" value="Login"></div>
+                    </form>
+
+                    <img src="{% static 'skoolie/login/barcode.png' %}">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

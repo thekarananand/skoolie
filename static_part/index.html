@@ -1,40 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<ul class="topnav">
-  <li class="logo"><label>Skoolie</label></li>
-  <li><a class="active" href="#">Login</a></li>
-  <li><a href="#">Sign Up</a></li>
-  <li class="right"><a href="#about">About</a></li>
-  <li class="right" id="date"><a href="#contact" >Date</a></li>
-</ul>
-
-<div>
-    <h4 style = "font-size : 5vw; color:#F79E6C;">Welcome to Skoolie!</h4>
-</div>
-<div class="flex">
-    <img src="/assets/Page Design/Login Page/confused man.png" class="cman" alt="Confused man">
-    <div class="login_window">
-        <img src="/assets/Page Design/Login Page/sample_profile.png" alt="profile" class="profile">
-        <div class="form">
-            <input type="text" inputmode="email" placeholder="Email">
-            <input type="text" placeholder="Password">
-            <button onclick="">Log In</button>
-
+    <div class="navbar">
+        <div class="logo">
+            Skoolie <!-- Company name -->
         </div>
-        <img src="/assets/Page Design/Login Page/barcode.png" alt="barcode" class="barcode">
+        <div class="hamburger" onclick="toggleNav()">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+        <ul class="nav-links">
+            <li>
+                    <div id="cl">
+                        Mon, Aug 28
+                    </div>
+            </li>
+            <li>
+                <div id="cr" style="text-align: center;">
+                    <img src="/assets/icons/bell-solid (1).svg" alt="bell" width="30px">
+                </div>
+            </li>
+            <li>
+                <div id="cr">
+
+                </div>
+            </li>
+        </ul>
     </div>
-    <!-- <p class="tagline" style="display: block;">Lets Manage all the Chaos</p> -->
+    <div class="container">
+        <div class="left-container">
+            <img src="/assets/Page Design/Login Page/confused man.png" alt="Responsive Image" class="responsive-image">
+        </div>
+        <div class="right-container">
+            <div class="id-card-landscape">
+                <div>
+                <div class="college-name">College ID</div>
+                <div class="student-photo-landscape">
+                    <img src="/assets/Page Design/Login Page/sample_profile.png" width="150px">
+                </div>
+                </div>
+                <div class="input-group-landscape">
+                    <input type="text" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <input id="button" type="button" value="Login">
+                </div>
+                <div class="barcode-landscape">
+                    <img src="/assets/Page Design/Login Page/barcode.png" width="20px" alt="barcode" class="barcode">
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
-
+    <script>
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

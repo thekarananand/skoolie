@@ -23,3 +23,7 @@
     {% block CONTENT %}{% endblock %}
 
 {% endblock %}
+{% block JavaScript %}
+    {% load static %}
+    <script defer src="{% static 'skoolie/script.js' %}"></script>
+{% endblock %}

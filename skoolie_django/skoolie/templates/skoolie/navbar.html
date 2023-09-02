@@ -1,0 +1,25 @@
+{% extends "skoolie/Layout.html" %}
+
+{% block CSS %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'skoolie/navbar.css' %}">
+    {% block CSS1 %}{% endblock %}
+{% endblock %}
+
+{% block BODY %}
+    {% load static %}
+    
+    <header>
+        <div class="left">
+            <h2>skoolie</h2>
+        </div>
+        <div class="right">
+            <div class="date"><p>{{ DATE }}</p></div>
+            <div class="icon"><img src="{% static 'skoolie/icons/bell.svg' %}" alt="alert" class="alert"></div>
+            <div class="icon"><img src="{% static 'skoolie/icons/signout.svg' %}" alt="signout" class="signout"></div>
+        </div>
+    </header>
+
+    {% block CONTENT %}{% endblock %}
+
+{% endblock %}

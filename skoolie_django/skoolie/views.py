@@ -23,3 +23,8 @@ def login(request):
 
 def dashboard(request, StudentObject):
     return HttpResponse(str(StudentObject))
+
+def navbar(request):
+    return render(request, "skoolie/navbar.html", {
+        "DATE" : "Sat, Sept 02"
+    })

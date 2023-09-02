@@ -1,17 +1,25 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .sample import sample
+
 # Create your views here.
 
 def login(request):
-    return render(request, "skoolie/login.html")
-
-def dashboard(request):
+    if request.method == "GET":
+        return render(request, "skoolie/login.html")
+    
     if request.method == "POST":
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
 
-        return HttpResponse(username + "   " + password)
-    
-    else:
-        return HttpResponse("not POST request")
+        try:
+            if sample[email]["PASSWORD"]==password:
+                return dashboard(request, sample[email])
+            else:
+                return HttpResponse("Login Failed")
+        except KeyError:
+            return HttpResponse("Login Failed")
+
+def dashboard(request, StudentObject):
+    return HttpResponse(str(StudentObject))

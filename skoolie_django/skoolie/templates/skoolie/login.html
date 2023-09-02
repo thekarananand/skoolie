@@ -1,7 +1,7 @@
 {% extends "skoolie/Layout.html" %}
 
 {% block title %}
-    Skoolie | Login
+    Login | Skoolie
 {% endblock %}
 
 {% block CSS %}
@@ -31,11 +31,11 @@
                 <div class="innerDiv">
                     <img src="{% static 'skoolie/login/sample_profile.png' %}">
 
-                    <form action="{% url 'dashboard' %}" method="POST">
+                    <form action="{% url 'login' %}" method="POST">
                         {% csrf_token %}
-                        <label for="username">Email</label>
-                        <input type="email" name="username" id="username">
-                        <label for="username">Password</label>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                        <label for="password">Password</label>
                         <input type="password" name="password" id="password">
                         <div><input type="submit" value="Login"></div>
                     </form>

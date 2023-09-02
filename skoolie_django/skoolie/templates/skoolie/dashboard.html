@@ -32,7 +32,7 @@
             <div class="heading">
                 <!-- follow this format -->
                 {% load static %}
-                <img src="{% static 'skoolie/icons/edit.svg' %}" alt="Logo" style="display: inline;">
+                <img src="{% static 'skoolie/icons/edit.svg' %}" alt="Logo" style="display: inline;" class="logo">
                 <!-- follow this format -->
                 <p style="display:inline;">To-Do</p>
             </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="item" id="testandass">
             <div class="heading">
-                <img src="#" alt="Logo" style="display: inline;">
+                <img src="{% static 'skoolie/icons/test.svg' %}" alt="Logo" style="display: inline;" class="logo">
                 <p style="display:inline;">Test and Assignments</p>
             </div>
             <br>
@@ -57,7 +57,7 @@
         </div>
         <div class="item" id="club_societies">
             <div class="heading">
-                <img src="" alt="Logo" style="display: inline;">
+                <img src="{% static 'skoolie/icons/trophy.svg' %}" alt="Logo" style="display: inline;" class="logo">
                 <p style="display:inline;">Clubs and Socities</p>
             </div>
             <br>
@@ -70,7 +70,7 @@
         <div class="item" id="upcom_events">
             <div class="exam_reminder">
                 <div class="heading">
-                    <img src="#" alt="Logo" style="display: inline;">
+                    <img src="{% static 'skoolie/icons/exam.svg' %}"  alt="Logo" style="display: inline;" class="logo">
                     <p style="display:inline;">Upcoming Exams</p>
                 </div>
                 <div class="exam_data">
@@ -80,8 +80,8 @@
             </div>
             <div class="attendance_reminder">
                 <div class="heading">
-                    <img src="#" alt="Logo" style="display: inline;">
-                    <p style="display:inline;">Attendance Reminder</p>
+                    <img src="{% static 'skoolie/icons/thumbs-up.svg' %}"  alt="Logo" style="display: inline;" class="logo">
+                    <p style="display:inline;">Attendance</p>
                 </div>
                 <div class="attendance_data">
                     <!-- Dynamic data goes here -->
@@ -91,7 +91,7 @@
         </div>
         <div class="item" id="Pinned">
             <div class="heading">
-                <img src="#" alt="Logo" style="display: inline;">
+                <img src="{% static 'skoolie/icons/map-pin-alt.svg' %}"  alt="Logo" style="display: inline;" class="logo">
                 <p style="display:inline;">Pinned</p>
             </div>
             <br>
@@ -106,10 +106,10 @@
     <br>
     <div class="container2" id="implinks">
         <div class="curriculum">
-           <a href="#"><img src="" alt="logo">Curriculum</a>
+           <a href="#"><img src="{% static 'skoolie/icons/curriculum.svg' %}" alt="logo">Curriculum</a>
         </div>
         <div class="erp">
-            <a href="#"><img src="" alt="logo">ERP Portal</a>
+            <a href="#"><img src="{% static 'skoolie/icons/erp.svg' %}" alt="logo">ERP Portal</a>
         </div>
     </div>
 </main>

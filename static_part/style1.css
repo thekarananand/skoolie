@@ -101,4 +101,15 @@ a{
     border: 1px black solid;
     border-radius: 8px;
 }
+.tc {
+    font-size: 23px;
+    background-color: blanchedalmond;
+    border: 2px solid grey;
+    padding: 34px;
+    margin: 4px;
+    text-align: center;
+}
 
+#time {
+    font-weight: bold;
+}

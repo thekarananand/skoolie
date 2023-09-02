@@ -83,6 +83,7 @@ a{
 }
 .heading{
     text-align: left;
+    vertical-align: middle;
 }
 .task_list,.work_list,.club_reminders,.imp_events{
     display:grid;
@@ -100,4 +101,6 @@ a{
     border: 1px black solid;
     border-radius: 8px;
 }
-
+img.logo{
+    width: 28px;
+}

@@ -3,46 +3,102 @@
     font-weight: 300;
     padding: 0px;
 }
+label{
+    font-weight: bold;
+    font-size: larger;
+    font-weight: 700;
+    font-family: rubik;
+}
 body{
     padding: 0px;
     margin: 0px;
-    background-color: antiquewhite;
+    background-color: #FFFFFFFD;
+    margin-left: 3%;
+}
+main{
+    padding-left: 2%;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+    font-size: 0.8em;
+    font-weight: 400;
 }
 a{
     color: black;
     text-decoration: none;
-    background-color: green;
+
 }
 .container{
-    background-color: red;
+    background-color:#FFFFFFFD;
     max-width: 100%;
-    height: 400px;
+    height: 300px;
     display: grid;
     grid-template-columns: repeat(5,1fr);
 }
 .item{
-    background-color: green;
-    height: 400px;
-    max-width:80%;
+    background-color: #E6FFFC;
+    height: 280px;
+    max-width:90%;
+    align-self: center;
+    border-color:black ;
+    border-width: 1px 1px 1px 1px;
+    border-style:solid;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px 0px;
 
 }
 .container2{
     display: grid;
-    height: 70px;
-    background-color: brown;
+    height: 40px;
+    background-color:#FFFFFFFD;
     grid-template-columns: repeat(5,1fr);
 }
 .curriculum, .erp {
     background-color: purple;
-    height: 60px;
+    height: 30px;
     align-self: center;
-    row-gap: 5px;
+    column-gap: 5px;
+    width: 90%;
+    background-color:#E6FFFC ;
+    border: solid 1px black;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 3px 3px 0px 0px;
 }
 #upcom_events{
     display: grid;
     grid-template-rows: repeat(2,1fr);
+    row-gap: 6px;
+    size: 300px;
+    border: none;
+    background-color:#FFFFFFFD;
+    box-shadow: none;
 }
 .exam_reminder,.attendance_reminder{
-    height: 150px;    
-    background-color: aqua;  
+    height: 135px;    
+    background-color: #E6FFFC;  
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px 0px;
 }
+.heading{
+    text-align: left;
+}
+.task_list,.work_list,.club_reminders,.imp_events{
+    display:grid;
+    background-color: #E6FFFC;
+    padding-left: 8px;
+    grid-template-rows: auto;
+    align-self: center;
+    row-gap: 10px;
+    overflow-y:auto;
+}
+.task_list>p,.work_list>p,.club_reminders>p,.imp_events >p{
+    max-width: 90%;
+    background-color: #FFFFFFFD;
+    height: 30px;
+    border: 1px black solid;
+    border-radius: 8px;
+}
+

@@ -30,7 +30,10 @@
     <div class="container">
         <div class="item" id="todo">
             <div class="heading">
-                <img src="#" alt="Logo" style="display: inline;">
+                <!-- follow this format -->
+                {% load static %}
+                <img src="{% static 'skoolie/icons/edit.svg' %}" alt="Logo" style="display: inline;">
+                <!-- follow this format -->
                 <p style="display:inline;">To-Do</p>
             </div>
             <br>
@@ -110,4 +113,9 @@
         </div>
     </div>
 </main>
+{% endblock %}
+
+{% block JavaScript %}
+    {% load static %}
+    <script src="{% static 'skoolie/script.js' %}"></script>
 {% endblock %}

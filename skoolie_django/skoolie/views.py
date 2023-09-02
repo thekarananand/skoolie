@@ -24,7 +24,7 @@ def login(request):
 def dashboard(request, StudentObject):
     return HttpResponse(str(StudentObject))
 
-def navbar(request):
-    return render(request, "skoolie/navbar.html", {
+def dashboard1(request):
+    return render(request, "skoolie/dashboard.html", {
         "DATE" : "Sat, Sept 02"
     })

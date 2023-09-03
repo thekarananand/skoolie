@@ -21,6 +21,7 @@ div.ctn{
     column-gap: 10px;
     row-gap: 10px;
     height: inherit;
+    border: none;
 }
 div.item{
     background-color: #E6FFFC;
@@ -71,4 +72,8 @@ td{
     border: 1px solid black;
     border-radius:9px;
     place-self: center;
+}
+hr{
+    width: 80%;
+    margin: auto;
 }

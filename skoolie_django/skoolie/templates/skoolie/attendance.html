@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="attstyle.css">
-</head>
-<body>
-    <h1>Here's Your Attendance</h1>
+{% extends "skoolie/navbar.html" %}
+
+{% block title %}
+    Attendance | Skoolie
+{% endblock %}
+
+{% block CSS1 %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'skoolie/attstyle.css' %}">
+{% endblock %}
+
+{% block CONTENT %}
+<br><br>
+<h1>Here's Your Attendance</h1>
+<br>
     <div class="ctn">
         <div class="item" id="it1">
             <h2 class="subname">Control System Engineering</h2>
@@ -66,5 +68,4 @@
             
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

@@ -23,7 +23,7 @@ header .right {
     padding: 10px 20px;
 }
 
-header .right .date{
+.ctn{
     border: 1px solid black;
     border-radius: 25px;
     background-color: white;
@@ -33,7 +33,7 @@ header .right .date{
     justify-content: baseline;
 }
 
-header .right .date p{
+#time{
     padding: 5px 20px;
     font-weight: 400;
     font-size: 26px;

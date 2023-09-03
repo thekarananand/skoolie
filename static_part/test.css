@@ -1,0 +1,85 @@
+*{
+    font-family: rubik;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.container > div {
+    max-width: 50%;
+}
+
+.container .Doodle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container .Doodle img {
+    width: 90%;
+}
+
+.container .Doodle h1 {
+    text-align: center;
+}
+
+.container .IDcard {
+    background-color: #DCDAF9 ;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    width:500px;
+    
+}
+
+.container .IDcard .innerDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container .IDcard .innerDiv img{
+    flex:1;
+    height: 200px;
+}
+
+.container .IDcard .innerDiv form{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    margin-left:15px ;
+}
+.container .IDcard .barcode{
+    flex:1;
+    margin-left:50px ;
+}
+input{
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 16px; 
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+input:focus{
+    border-color: #007BFF;
+}
+#submit{
+    width:100px;
+    background-color:#89baf4;
+    margin-top: 22px;
+    margin-left: 125px;
+}
+#submit:hover{
+    cursor: pointer;
+}
+label{
+    margin-left: 6px;
+    font-size: 15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}

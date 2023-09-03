@@ -64,6 +64,8 @@ a{
     border-radius: 5px;
     text-align: left;
     box-shadow: 3px 3px 0px 0px;
+    display: flex;
+    align-items: center;
 }
 #upcom_events{
     display: grid;
@@ -82,9 +84,19 @@ a{
     box-shadow: 3px 3px 0px 0px;
 }
 .heading{
-    text-align: left;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 7px;
 }
+.heading img{
+    padding:4px;
+}
+.heading p{
+    margin-left: 10px;
+    font-size: 13px;
+}
+
 .task_list,.work_list,.club_reminders,.imp_events{
     display:grid;
     background-color: #E6FFFC;
@@ -102,5 +114,5 @@ a{
     border-radius: 8px;
 }
 img.logo{
-    width: 28px;
+    width: 24px;
 }

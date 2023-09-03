@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .utils import read_student_data, update_student_data , calculate_attendance_percentage
+
 from django.http import HttpResponse  ,HttpResponseRedirect
 
 from .sample import sample
@@ -31,21 +31,3 @@ def dashboard1(request):
     })
     
 
-
-def update_student(request):
-    if request.method == 'POST':
-        student_name = request.POST['student_name']
-        subject_name = request.POST['subject_name']
-        percentage = request.POST['percentage']
-        
-
-        subject_names = ["Circuit Theory", "Numerical Methods", "EMF Theory", "Electronic Devices and IC", "EMMI"]
-        
-        update_student_data(student_name, subject_name, percentage, subject_names)
-        return HttpResponseRedirect('/students/')  
-    else:
-        student_data = read_student_data()
-        
-        subject_names = ["Circuit Theory", "Numerical Methods", "EMF Theory", "Electronic Devices and IC", "EMMI"]
-        
-        return render(request, 'update_student.html', {'student_data': student_data[1:], 'subject_names': subject_names})

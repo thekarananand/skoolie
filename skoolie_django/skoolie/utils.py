@@ -1,51 +1,29 @@
 import csv
+def attendance(roll_no):
+    with open('CT.csv', 'r') as file:
+            reader = csv.DictReader(file)
+            student_data = list(reader)
 
+            for row in student_data:
+             if row['Roll No'] == roll_no:
+                
+                attendance_values = [int(row[f'Subject{i}']) for i in range(1, 6)]
 
-CSV_FILE = 'student_data.csv'
+                # Calculate attendance percentage
+                attendance_percentage = attendance_percentage(attendance_values)
+                return attendance_percentage
 
+             return None
 
-def read_student_data():
-    with open(CSV_FILE, 'r') as file:
-        reader = csv.DictReader(file)
-        student_data = list(reader)
-    return student_data
+def attendance_percentage(attendance_values):
+    total_classes = len(attendance_values)
+    present_classes = attendance_values.count(1)
+    no_class = attendance_values.count(-1)
 
+    if total_classes == 0:
+        return 0.0 
 
-def update_student_data(student_name, subject_name, percentage, subject_names):
-    student_data = read_student_data()
-    student_data.append({
-        'student_name': student_name,
-        'subject_name': subject_name,
-        'percentage': percentage
-    })
-    with open(CSV_FILE, 'w', newline='') as file:
-        fieldnames = ['student_name', 'subject_name', 'percentage']
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
-        if not student_data:
-            writer.writeheader()
-        writer.writerows(student_data)
-
-
-def calculate_attendance_percentage(student_name, subject_names):
-    student_data = read_student_data()
     
-   
-    total_classes = 0
-    present_classes = 0
-    
-    
-    for data in student_data:
-        if data['student_name'] == student_name and data['subject_name'] in subject_names:
-            total_classes += 1
-            if float(data['percentage']) > 0:
-                present_classes += 1
-    
-    
-    if total_classes > 0:
-        attendance_percentage = (present_classes / total_classes) * 100
-    else:
-        attendance_percentage = 0
-    
+    attendance_percentage = (present_classes / (total_classes - no_class)) * 100.0
+
     return attendance_percentage
-
-

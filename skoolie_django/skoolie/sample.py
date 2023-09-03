@@ -10,7 +10,8 @@ sample = {
             "PROGRAM" : "BTECH",
             "BRANCH" : "ICE",
             "CONTACT" : "EMAIL",
-        }
+        },
+        "Subs": ["CT","SP","DST"],
     },
 
     "nitish@gmail.com" : {
@@ -24,7 +25,8 @@ sample = {
             "PROGRAM" : "BTECH",
             "BRANCH" : "ICE",
             "CONTACT" : "EMAIL",
-        }
+        },
+        "Subs":["CT","SP","DST"],
     },
 }
 

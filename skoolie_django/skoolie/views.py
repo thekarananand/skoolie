@@ -29,10 +29,7 @@ def dashboard1(request):
     return render(request, "skoolie/dashboard.html", {
         "DATE" : "Sat, Sept 02"
     })
-<<<<<<< HEAD
     
-
-=======
 def attendance(request):
     return render(request,"skoolie/attendance.html")
 
@@ -53,4 +50,3 @@ def update_student(request):
         subject_names = ["Circuit Theory", "Numerical Methods", "EMF Theory", "Electronic Devices and IC", "EMMI"]
         
         return render(request, 'update_student.html', {'student_data': student_data[1:], 'subject_names': subject_names})
->>>>>>> 14b491437fd5ffd82b75c0c9250b13690f86b980

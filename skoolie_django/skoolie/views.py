@@ -29,8 +29,8 @@ def dashboard1(request):
     return render(request, "skoolie/dashboard.html", {
         "DATE" : "Sat, Sept 02"
     })
-    
-
+def attendance(request):
+    return render(request,"skoolie/attendance.html")
 
 def update_student(request):
     if request.method == 'POST':

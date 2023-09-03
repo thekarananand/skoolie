@@ -11,7 +11,7 @@ sample = {
             "BRANCH" : "ICE",
             "CONTACT" : "EMAIL",
         },
-        "Subs": ["CT","SP","DST"],
+        "SUBJECTS": ["CT","DST"],
     },
 
     "nitish@gmail.com" : {
@@ -26,12 +26,6 @@ sample = {
             "BRANCH" : "ICE",
             "CONTACT" : "EMAIL",
         },
-        "Subs":["CT","SP","DST"],
+        "SUBJECTS":["CT","DST"],
     },
 }
-
-try :
-    print (sample["hgib"]) 
-
-except KeyError :
-    print ("Wrong Key")

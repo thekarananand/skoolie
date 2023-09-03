@@ -6,22 +6,10 @@
 
 
 {% block CONTENT %}
-<!-- <div class="top_bar"> -->
-    <!-- <img src="#" alt="" id="icon"> --> <!-- Uncomment to add logo -->
-    <!-- <label><strong>Skoolie</strong></label> -->
-    <!-- <a href="#" class="opt1">Home</a>
-    <a href="#" class="opt2">Attendance</a> -->
-    <!-- <p class="date"></p>
-    <a href="#" class="notif"><img src="" alt="" class="noti"></a>
-    <div class="profile">
-        <div class="upcoming"></div>
-        <div class="calender"></div>
-    </div> -->
 
-<!-- </div> -->
 <main>
     <br><br>
-    <h1><strong>Good Morning, <!-- Name of User Goes here --> !</strong></h1>
+    <h1><strong>Good {{ GREET }}, {{ NAME }}!</strong></h1>
     <br><br>
     <div class="container">
         <div class="item" id="todo">
@@ -80,9 +68,16 @@
                     <img src="{% static 'skoolie/icons/day_4341579.png' %}"  alt="Logo" style="display: inline;width:35px" class="logo">
                     <p style="display:inline;">Attendance</p>
                 </div>
+                <a href="{% url 'attendance' %}">
                 <div class="attendance_data">
-                    <!-- Dynamic data goes here -->
+                    {{ ATTENDANCE }}
+                    <form action="{% url 'attendance' %}" method = "POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="rollno" value="{{ rollno }}">
+                        <input type="submit" value="Know More">
+                    </form>
                 </div>
+                </a>
                 
             </div>
         </div>

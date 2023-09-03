@@ -17,7 +17,7 @@
         <div class="item" id="it1">
             <h2 class="subname">Control System Engineering</h2>
             <div class="inctn">
-                <p><strong style="font-size:25px; font-weight: bold;">76%<!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
+                <p><strong style="font-size:25px; font-weight: bold;">{{ CT_percentage }}</strong><br>Attended {{ CT_present }} out of {{ CT_total }}</p>
                 <div class="data">
                     <p>Data</p>
                     <hr>
@@ -30,12 +30,12 @@
         <div class="item" id="it2">
             <h2 class="subname"></h2>
             <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
+                <p><strong>{{ DST_percentage }}</strong><br>Attended {{ DST_present }} out of {{ DST_total }}</p>
                 
             </div>
             
         </div>
-        <div class="item" id="it3">
+        {% comment %} <div class="item" id="it3">
             <h2 class="subname"></h2>
             <div class="inctn">
                 <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
@@ -66,6 +66,6 @@
                 
             </div>
             
-        </div>
+        </div> {% endcomment %}
     </div>
 {% endblock %}

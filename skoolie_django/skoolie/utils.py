@@ -1,29 +1,42 @@
 import csv
-def attendance(roll_no):
-    with open('CT.csv', 'r') as file:
-            reader = csv.DictReader(file)
-            student_data = list(reader)
+from django.core.files.storage import default_storage
 
-            for row in student_data:
-             if row['Roll No'] == roll_no:
-                
-                attendance_values = [int(row[f'Subject{i}']) for i in range(1, 6)]
+def ReadAttendance(rollno, subject):
+    total = 0
+    present = 0
+    absent = 0
+    path = f"storage/{subject}.csv"  
 
-                # Calculate attendance percentage
-                attendance_percentage = attendance_percentage(attendance_values)
-                return attendance_percentage
+    if default_storage.exists(path):
+        file_absolute_path = default_storage.path(path)
 
-             return None
+        with open(file_absolute_path, "r") as obj:
+            fobj = csv.reader(obj)
+            next(fobj)
+            for i in fobj:
+                if i[0] == rollno:
+                    break
 
-def attendance_percentage(attendance_values):
-    total_classes = len(attendance_values)
-    present_classes = attendance_values.count(1)
-    no_class = attendance_values.count(-1)
+            for j in range(1, 8):
+                total = total + 1
+                if i[j] == '1':
+                    present = present + 1
+                if i[j] == '0':
+                    absent += 1
 
-    if total_classes == 0:
-        return 0.0 
+            cancel = total - (present + absent)
+            track = [total, present, absent, cancel]
+            return track
+    else:
+        # Handle the case where the file doesn't exist
+        return None
 
+def PresentageAttendance(rollno, subject):
+    track = ReadAttendance(rollno, subject)
     
-    attendance_percentage = (present_classes / (total_classes - no_class)) * 100.0
-
-    return attendance_percentage
+    if track is not None:
+        # Calculate and return the attendance percentage
+        return int((track[1] / (track[0] - track[3])) * 100)
+    else:
+        # Handle the case where the file doesn't exist
+        return None

@@ -1,16 +1,19 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
+{% extends "skoolie/Layout.html" %}
+
+{% block title %}
+    Login | Skoolie
+{% endblock %}
+
+{% block CSS %}
+    {% load static %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="test.css">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'skoolie/login.css' %}">
+    {% endblock %}
+
+    {% block BODY %}
+        {% load static %}
 
     <div class="Main">
 
@@ -19,8 +22,9 @@
         </nav>
 
         <div class="container">
+            {% load static %}
             <div class="Doodle">
-                <img src="/assets/Page Design/Login Page/confused man.png">
+                <img src="{% static 'skoolie/login/confused man.png' %}">
                 <h1>Let's manage all the chaos</h1>
             </div>
 
@@ -28,9 +32,10 @@
             <div class="IDcard">
                 <h2>College ID</h2>
                 <div class="innerDiv">
-                    <img src="/assets/Page Design/Login Page/sample_profile.png">
+                    <img src="{% static 'skoolie/login/sample_profile.png' %}">
 
-                    <form action="index.html" method="POST">
+                    <form action="{% url 'login' %}" method="POST">                        
+                        {% csrf_token %}
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email">
                         <label for="password">Password</label>
@@ -38,56 +43,15 @@
                         <div><input id="submit" type="submit" value="Login"></div>
                     </form>
 
-                    <img class="barcode" src="/assets/Page Design/Login Page/barcode.png">
+                    <img class="barcode" src="{% static 'skoolie/login/barcode.png' %}">
                 </div>
             </div>
 
         </div>
     </div>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="test.css">
-</head>
-<body>
 
-    <div class="Main">
+    {% endblock %}
 
-        <nav>
-            <h2>Skoolie</h2>
-        </nav>
+{% block JavaScript %}
 
-        <div class="container">
-            <div class="Doodle">
-                <img src="/assets/Page Design/Login Page/confused man.png">
-                <h1>Let's manage all the chaos</h1>
-            </div>
-
-
-            <div class="IDcard">
-                <h2>College ID</h2>
-                <div class="innerDiv">
-                    <img src="/assets/Page Design/Login Page/sample_profile.png">
-
-                    <form action="index.html" method="POST">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
-                        <div><input id="submit" type="submit" value="Login"></div>
-                    </form>
-
-                    <img class="barcode" src="/assets/Page Design/Login Page/barcode.png">
-                </div>
-            </div>
-
-        </div>
-    </div>
->>>>>>> f7f0171f4b6fdd9682447fc430c3e2ee5403524b
+{% endblock %}

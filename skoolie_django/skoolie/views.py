@@ -73,6 +73,7 @@ def attendance(request):
         present = []
         total = []
         percentage = []
+        lst1=[]
 
         for subject in ["CT", "DST"]:
             try:
@@ -83,8 +84,8 @@ def attendance(request):
             except Exception as e:
                 print(f"Error processing attendance for {subject}: {e}")
         for subs in ["CT","DST"]:
-            lst1=colouratt(PresentageAttendance(rollno, subject))
-
+            lst1=colouratt(int(PresentageAttendance(rollno, subject)))
+            #error
         return render(request, "skoolie/attendance.html", {
             "DATE" : "Mon, Sept 04",
             "CT_percentage": percentage[0],

@@ -11,61 +11,86 @@
 
 {% block CONTENT %}
 <br><br>
-<h1>Here's Your Attendance</h1>
+<h1 class="attendancehead">Here's Your Attendance</h1>
 <br>
-    <div class="ctn">
-        <div class="item" id="it1">
-            <h2 class="subname">Control System Engineering</h2>
-            <div class="inctn">
-                <p><strong style="font-size:25px; font-weight: bold;">{{ CT_percentage }}</strong><br>Attended {{ CT_present }} out of {{ CT_total }}</p>
-                <div class="data">
-                    <p>Data</p>
-                    <hr>
+<div class="cotn" style="    display: grid;
+grid-template-columns: repeat(5,1fr);
+column-gap: 10px;
+row-gap: 10px;
+height: inherit;">
+    <div class="item" id="it1" style="background-color: #E6FFFC;
+    height: 280px;
+    border: 1px black solid;
+    border-radius: 9px;
+    box-shadow: 3px 3px 0px 0px;">
+        <h2 class="subname" style=" text-align: center;
+            margin-bottom: 3px;
+            font-weight: bolder;
+            margin-top: 2px;">Circuit Theory</h2>
+        <div class="incotn" style="display: grid;
+        grid-template-rows: 70px 1fr;
+        justify-content: center;
+        align-items: center;
+        row-gap: 5px ;">
+            <p style="    background-color: #FFFFFFFD;
+            width: 100%;
+            border: 1px solid black;
+            border-radius:9px;
+            text-align: center;"><strong style="font-size:25px; font-weight: bold;">{{ CT_percentage }}%</strong><br>Attended {{ CT_present }} out of {{ CT_total }}</p>
+            <div class="data" style="background-color: #FFFFFFFD;
+            width: 99%;
+            height: 130px;
+            border: 1px solid black;
+            border-radius:9px;
+            place-self: center;">
+                <p class="ii">Sep02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                <hr>
+                <p class="ii">Sep01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
+                <hr>
+                <p class="ii">Aug30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                <hr>
+                <p class="ii">Aug29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
+                <hr>
 
-                </div>
-
             </div>
 
         </div>
-        <div class="item" id="it2">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong>{{ DST_percentage }}</strong><br>Attended {{ DST_present }} out of {{ DST_total }}</p>
-                
-            </div>
-            
-        </div>
-        {% comment %} <div class="item" id="it3">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div>
-        <div class="item" id="it4">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div>
-        <div class="item" id="it5">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div>
-        <div class="item" id="it6">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div> {% endcomment %}
+
     </div>
+    <div class="item" id="it2">
+        <h2 class="subname" style=" text-align: center;
+        margin-bottom: 3px;
+        font-weight: bolder;
+        margin-top: 2px;"> Data Structures</h2>
+        <div class="incotn" style=" display: grid;
+        grid-template-rows: 70px 1fr;
+        justify-content: center;
+        align-items: center;
+        row-gap: 5px ;">
+            <p style="    background-color: #FFFFFFFD;
+            width: 100%;
+            border: 1px solid black;
+            border-radius:9px;
+            text-align: center;"><strong style="font-size:25px; font-weight: bold;">{{ DST_percentage }}%</strong><br>Attended {{ DST_present }} out of {{ DST_total }}</p>
+            <div class="data" style="background-color: #FFFFFFFD;
+            width: 99%;
+            height: 130px;
+            border: 1px solid black;
+            border-radius:9px;
+            place-self: center;">
+                <p class="ii">Sep02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
+                <hr style=" width: 80%;">
+                <p class="ii">Sep01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                <hr>
+                <p class="ii">Aug30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                <hr>
+                <p class="ii">Aug29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
+                <hr>        
+
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
 {% endblock %}

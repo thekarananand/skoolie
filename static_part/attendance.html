@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="attendance">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +10,20 @@
     <link rel="stylesheet" href="attstyle.css">
 </head>
 <body>
-    <h1>Here's Your Attendance</h1>
-    <div class="ctn">
+    <h1 class="attendancehead">Here's Your Attendance</h1>
+    <div class="cotn">
         <div class="item" id="it1">
-            <h2 class="subname">Control System Engineering</h2>
-            <div class="inctn">
-                <p><strong style="font-size:25px; font-weight: bold;">76%<!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
+            <h2 class="subname">Circuit Theory</h2>
+            <div class="incotn">
+                <p><strong style="font-size:25px; font-weight: bold;">{{ CT_percentage }}%</strong><br>Attended {{ CT_present }} out of {{ CT_total }}</p>
                 <div class="data">
-                    <p>Data</p>
+                    <p class="ii">Sep02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                    <hr>
+                    <p class="ii">Sep01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
+                    <hr>
+                    <p class="ii">Aug30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                    <hr>
+                    <p class="ii">Aug29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
                     <hr>
 
                 </div>
@@ -26,41 +32,20 @@
 
         </div>
         <div class="item" id="it2">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div>
-        <div class="item" id="it3">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div>
-        <div class="item" id="it4">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div>
-        <div class="item" id="it5">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
-                
-            </div>
-            
-        </div>
-        <div class="item" id="it6">
-            <h2 class="subname"></h2>
-            <div class="inctn">
-                <p><strong><!-- Dynamic Content --></strong><br>Attended <!-- Dynamic Content --> out of <!-- Dynamic Content --></p>
+            <h2 class="subname"> Data Structures</h2>
+            <div class="incotn">
+                <p><strong style="font-size:25px; font-weight: bold;">{{ DST_percentage }}%</strong><br>Attended {{ DST_present }} out of {{ DST_total }}</p>
+                <div class="data">
+                    <p class="ii">Sep02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
+                    <hr>
+                    <p class="ii">Sep01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                    <hr>
+                    <p class="ii">Aug30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
+                    <hr>
+                    <p class="ii">Aug29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
+                    <hr>        
+
+                </div>
                 
             </div>
             

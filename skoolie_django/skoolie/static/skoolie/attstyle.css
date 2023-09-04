@@ -2,26 +2,25 @@
     font-family: rubik;
     font-weight: 300;
 }
-p{
+p.ii{
     margin: 0px;
     font-size: 16px;
     text-align: center;
 }
-h2{
+h2.subname{
     margin: 0px;
 }
-html{
+html.attendance{
     padding: 0px;
     margin: 0px;
     background-color: #FFFFFFFD;
 }
-div.ctn{
+div.cotn{    
     display: grid;
     grid-template-columns: repeat(5,1fr);
     column-gap: 10px;
     row-gap: 10px;
     height: inherit;
-    border: none;
 }
 div.item{
     background-color: #E6FFFC;
@@ -36,35 +35,20 @@ h2.subname{
     font-weight: bolder;
     margin-top: 2px;
 }
-div.inctn{
+div.incotn{
     display: grid;
     grid-template-rows: 70px 1fr;
     justify-content: center;
     align-items: center;
     row-gap: 5px ;
 }
-div.inctn>p{
+.ii{
     background-color: #FFFFFFFD;
     width: 225px;
     border: 1px solid black;
     border-radius:9px;
     text-align: center;
 }
-/* table{
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    background-color: #FFFFFFFD;
-    border: black 1px solid;
-    width: 100%;
-    border-collapse: collapse;
-    border-radius:9px;
-}
-td{
-    border-bottom: 1px solid black;
-    padding: 0px;
-
-} */
 .data{
     background-color: #FFFFFFFD;
     width: 99%;
@@ -74,6 +58,7 @@ td{
     place-self: center;
 }
 hr{
+    margin:auto;
+    
     width: 80%;
-    margin: auto;
 }

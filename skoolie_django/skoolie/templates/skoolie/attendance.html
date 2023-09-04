@@ -10,6 +10,23 @@
 {% endblock %}
 
 {% block CONTENT %}
+<style>
+    h1{
+        margin-left: 25px;
+    }
+    .incotn p{
+        width: 190px;
+        padding: 5px;
+    }
+    hr{
+        width: 80%;
+        margin: auto;
+    }
+    .ii{
+        text-align: center;
+        margin: 3px 0;
+    }
+</style>
 <br><br>
 <h1 class="attendancehead">Here's Your Attendance</h1>
 <br>
@@ -17,7 +34,8 @@
 grid-template-columns: repeat(5,1fr);
 column-gap: 10px;
 row-gap: 10px;
-height: inherit;">
+height: inherit;
+margin-left: 25px;">
     <div class="item" id="it1" style="background-color: #E6FFFC;
     height: 280px;
     border: 1px black solid;
@@ -33,7 +51,6 @@ height: inherit;">
         align-items: center;
         row-gap: 5px ;">
             <p style="    background-color: #FFFFFFFD;
-            width: 100%;
             border: 1px solid black;
             border-radius:9px;
             text-align: center;"><strong style="font-size:25px; font-weight: bold;">{{ CT_percentage }}%</strong><br>Attended {{ CT_present }} out of {{ CT_total }}</p>
@@ -68,7 +85,6 @@ height: inherit;">
         align-items: center;
         row-gap: 5px ;">
             <p style="    background-color: #FFFFFFFD;
-            width: 100%;
             border: 1px solid black;
             border-radius:9px;
             text-align: center;"><strong style="font-size:25px; font-weight: bold;">{{ DST_percentage }}%</strong><br>Attended {{ DST_present }} out of {{ DST_total }}</p>
@@ -79,7 +95,7 @@ height: inherit;">
             border-radius:9px;
             place-self: center;">
                 <p class="ii">Sep02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Absent</p>
-                <hr style=" width: 80%;">
+                <hr>
                 <p class="ii">Sep01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>
                 <hr>
                 <p class="ii">Aug30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present</p>

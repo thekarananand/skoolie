@@ -21,9 +21,13 @@ def login(request):
             if sample[email]["PASSWORD"]==password:
                 return dashboard(request, sample[email])
             else:
-                return HttpResponse("Login Failed")
+                return render(request, "skoolie/login.html",{
+                    "error" : "Wrong Credentials"
+                })
         except KeyError:
-            return HttpResponse("Login Failed")
+            return render(request, "skoolie/login.html",{
+                "error" : "Wrong Credentials"
+            })
 
 def dashboard(request, StudentObject):
 

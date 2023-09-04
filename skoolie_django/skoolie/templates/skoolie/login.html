@@ -41,10 +41,13 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password">
                         <div><input id="submit" type="submit" value="Login"></div>
+                        
                     </form>
 
                     <img class="barcode" src="{% static 'skoolie/login/barcode.png' %}">
                 </div>
+                
+                <div>{{ error|safe }}</div>
             </div>
 
         </div>

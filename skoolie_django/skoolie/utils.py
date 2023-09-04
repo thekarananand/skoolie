@@ -1,5 +1,28 @@
 import csv
 from django.core.files.storage import default_storage
+import datetime
+
+def get_greeting():
+    current_time = datetime.datetime.now().time()
+    
+    if current_time.hour < 12:
+        return "Good morning"
+    elif current_time.hour < 17:
+        return "Good afternoon"
+    else:
+        return "Good evening"
+
+# greeting = get_greeting()
+# print(greeting)
+def colouratt(percent):
+    if percent>=75:
+        return '#C8FFC8'
+    else:
+        return '#FFC8C8'
+def get_date():
+    current_date = datetime.datetime.now()
+    formatted_date = current_date.strftime("%a, %b %d")
+    return formatted_date
 
 def ReadAttendance(rollno, subject):
     total = 0

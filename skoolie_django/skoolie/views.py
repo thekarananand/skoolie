@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse  ,HttpResponseRedirect
 
 from .sample import sample
-from .utils import PresentageAttendance, ReadAttendance
+from .utils import PresentageAttendance, ReadAttendance, get_greeting, get_date, colouratt
 
 passStudentObject = {}
 
@@ -43,10 +43,11 @@ def dashboard(request, StudentObject):
     else:
         ATTENDANCE = "All Good"
         ATTENDANCE_SHADE = "#C8FFC8"
-
+    date=str(get_date())
+    greet=str(get_greeting())
     return render(request, "skoolie/dashboard.html", {
-        "GREET" : "Evening",
-        "DATE" : "Mon, Sept 04",
+        "GREET" : greet,
+        "DATE" : date,
         "NAME" : StudentObject["PREFERED NAME"],
         "ATTENDANCE" : ATTENDANCE,
         "ATTENDANCE_SHADE" : ATTENDANCE_SHADE,
@@ -61,11 +62,37 @@ def attendance_display(rollno, subjects):
             n = n + 1
 
     return n
-def colouratt(percent):
-    if percent>=75:
-        return '#C8FFC8'
-    else:
-        return '#FFC8C8'
+# def attendance(request):
+#     if request.method == "POST":
+#         rollno = request.POST.get('rollno', '')  # Use get() to avoid KeyError
+
+#         present = []
+#         total = []
+#         percentage = []
+#         lst1=[]
+
+#         for subject in ["CT", "DST"]:
+#             try:
+#                 lst = ReadAttendance(rollno, subject)
+#                 total.append(lst[0])
+#                 present.append(lst[1])
+#                 percentage.append(PresentageAttendance(rollno, subject))
+#             except Exception as e:
+#                 print(f"Error processing attendance for {subject}: {e}")
+#         for subs in ["CT","DST"]:
+#             lst1=colouratt(PresentageAttendance(rollno, subs))
+#             #error
+#         return render(request, "skoolie/attendance.html", {
+#             "DATE" : "Mon, Sept 04",
+#             "CT_percentage": percentage[0],
+#             "CT_total": total[0],
+#             "CT_present": present[0],
+#             "CT_color": lst1[0],
+#             "DST_percentage": percentage[1],
+#             "DST_total": total[1],
+#             "DST_present": present[1],
+#             "DST_color": lst1[1],
+#         })
 def attendance(request):
     if request.method == "POST":
         rollno = request.POST.get('rollno', '')  # Use get() to avoid KeyError
@@ -73,7 +100,7 @@ def attendance(request):
         present = []
         total = []
         percentage = []
-        lst1=[]
+        lst1 = []
 
         for subject in ["CT", "DST"]:
             try:
@@ -81,13 +108,12 @@ def attendance(request):
                 total.append(lst[0])
                 present.append(lst[1])
                 percentage.append(PresentageAttendance(rollno, subject))
+                lst1.append(colouratt(PresentageAttendance(rollno, subject)))
             except Exception as e:
                 print(f"Error processing attendance for {subject}: {e}")
-        for subs in ["CT","DST"]:
-            lst1=colouratt(int(PresentageAttendance(rollno, subject)))
-            #error
+
         return render(request, "skoolie/attendance.html", {
-            "DATE" : "Mon, Sept 04",
+            "DATE": "Mon, Sept 04",
             "CT_percentage": percentage[0],
             "CT_total": total[0],
             "CT_present": present[0],
@@ -97,5 +123,5 @@ def attendance(request):
             "DST_present": present[1],
             "DST_color": lst1[1],
         })
-        
+
 

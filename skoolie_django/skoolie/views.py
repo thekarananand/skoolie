@@ -8,6 +8,8 @@ from .utils import PresentageAttendance, ReadAttendance, get_greeting, get_date,
 passStudentObject = {}
 
 # Create your views here.
+def clubs(request):
+    return render(request,"skoolie/attendance.html")
 
 def login(request):
     if request.method == "GET":

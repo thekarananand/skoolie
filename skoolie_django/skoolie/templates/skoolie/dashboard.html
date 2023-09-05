@@ -7,10 +7,10 @@ Dashboard | Skoolie
 
 {% block CONTENT %}
 <style>
-    .task_list>p,
-    .work_list>p,
-    .club_reminders>p,
-    .imp_events>p {
+    .task_list > p,
+    .work_list > p,
+    .club_reminders > p,
+    .imp_events > p {
         text-align: center;
         vertical-align: middle;
         line-height: 2.4em;
@@ -25,10 +25,13 @@ Dashboard | Skoolie
         position: absolute;
         top:6px;
     }
+    #fnl:hover{
+        cursor:pointer;
+    }
 </style>
 <main>
     <br><br>
-    <h1><strong>Good {{ GREET }}, {{ NAME }}!</strong></h1>
+    <h1><strong>{{ GREET }}, {{ NAME }}!</strong></h1>
     <br><br>
     <div class="container">
         <div class="item" id="todo">
@@ -89,7 +92,7 @@ Dashboard | Skoolie
                         </span><br><span style="font-size: 30px;font-weight: bold;">12 days</span></p>
                 </div>
             </div>
-            <div class="attendance_reminder">
+            <div class="attendance_reminder" style="background-color: {{ ATTENDANCE_SHADE }};">
                 <div class="heading">
                     <img src="{% static 'skoolie/icons/day_4341579.png' %}" alt="Logo"
                         style="display: inline;width:35px" class="logo">
@@ -97,11 +100,11 @@ Dashboard | Skoolie
                 </div>
                 <a href="{% url 'attendance' %}">
                     <div class="attendance_data">
+                        <p style="text-align:center; font-weight:bold;font-size:14px;">{{ ATTENDANCE }}</P>
                         <form action="{% url 'attendance' %}" method="POST">
                             {% csrf_token %}
                             <input type="hidden" name="rollno" value="{{ rollno }}">
-                            <input style="margin-left: 60px;font-weight: 500;padding:3px;" type="submit" value="{{ ATTENDANCE }}"
-                                style="border-radius: 9px; background-color: #E6FFFC; border:none;">
+                            <input id="fnl" style="margin-left: 163px;font-weight: 500;padding:5px;background-color: #E6FFFC;border:none;border-radius:30px;margin-top:18px;"type="submit" value="Know More..">
                         </form>
                     </div>
                 </a>
@@ -126,12 +129,12 @@ Dashboard | Skoolie
     <br>
     <div class="container2" id="implinks">
         <div class="curriculum">
-            <a href="https://www.nitj.ac.in/template/index.html?id=64a4f538e7b4137ef2c5a9fe?category=newpage"><img
-                    src="{% static 'skoolie/icons/curriculum.svg' %}" alt="logo"><span id="mamta" >Curriculum</span></a>
+            <a href="https://www.nitj.ac.in/template/index.html?id=64a4f538e7b4137ef2c5a9fe?category=newpage" target="_blank"><img
+                    src="{% static 'skoolie/icons/curriculum.svg' %}"alt="logo"><span id="mamta" >Curriculum</span></a>
         </div>
         <div class="erp">
-            <a href="https://v1.nitj.ac.in/erp/login"><img src="{% static 'skoolie/icons/erp.svg' %}"
-                    alt="logo"><span id="mamta">ERP Portal</span></a>
+            <a href="https://v1.nitj.ac.in/erp/login" target="_blank"><img src="{% static 'skoolie/icons/erp.svg' %}"
+                    alt="logo" ><span id="mamta">ERP Portal</span></a>
         </div>
     </div>
 </main>

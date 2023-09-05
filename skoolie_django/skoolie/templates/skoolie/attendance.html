@@ -26,6 +26,9 @@
         text-align: center;
         margin: 3px 0;
     }
+    #it2,#it1{
+        background-color: {{ DST_color }};
+    }
 </style>
 <br><br>
 <h1 class="attendancehead">Here's Your Attendance</h1>
@@ -36,7 +39,7 @@ column-gap: 10px;
 row-gap: 10px;
 height: inherit;
 margin-left: 25px;">
-    <div class="item" id="it1" style="background-color: #E6FFFC;
+    <div class="item" id="it1" style="background-color: {{ CT_color }};
     height: 280px;
     border: 1px black solid;
     border-radius: 9px;
@@ -90,7 +93,7 @@ margin-left: 25px;">
             text-align: center;"><strong style="font-size:25px; font-weight: bold;">{{ DST_percentage }}%</strong><br>Attended {{ DST_present }} out of {{ DST_total }}</p>
             <div class="data" style="background-color: #FFFFFFFD;
             width: 99%;
-            height: 130px;
+            height: 130px;  
             border: 1px solid black;
             border-radius:9px;
             place-self: center;">

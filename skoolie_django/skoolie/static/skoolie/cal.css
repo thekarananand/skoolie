@@ -7,13 +7,13 @@
 
 }
 
-.wrapper{
+.wrapperz{
     width: 450px;
     background-color: white;
     border-radius: 10px;
     border: 2px solid black;
 }
-.wrapper header{
+.wrapperz header{
     display: flex;
     align-items: center;
     padding: 25px 30px 10px;

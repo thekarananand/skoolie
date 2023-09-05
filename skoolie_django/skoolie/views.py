@@ -9,7 +9,8 @@ passStudentObject = {}
 
 # Create your views here.
 def clubs(request):
-    return render(request,"skoolie/attendance.html")
+    if request.method =="POST":
+        return render(request,"skoolie/attendance.html")
 
 def login(request):
     if request.method == "GET":

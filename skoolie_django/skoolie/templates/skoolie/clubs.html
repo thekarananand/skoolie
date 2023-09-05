@@ -6,6 +6,53 @@
     <link rel="stylesheet" href="clubs.css">
     <title>Skoolie - Clubs and Societies</title>
     <script src="clubs.js" defer></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: blanchedalmond;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+.clubs {
+    display: grid;
+    width: 200px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    height: 300px;
+    
+}
+
+.club {
+    border: 1px solid #050505;
+    padding: 20px;
+    text-align: center;
+    background-color: #e6fffc;
+    border-radius: 10px;
+}
+
+.club h2 {
+    margin: 27px;
+}
+
+.activities {
+    list-style: none;
+    padding: 0;
+}
+
+.activities li {
+    margin-bottom: 5px;
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -18,4 +65,44 @@
 
      
 </body>
+<script>
+    
+const clubsData = [
+    {
+        name: "GDSC",
+        description: "Technical Club",
+        activities: ["Seminar on IOT at 5pm "],
+    },
+    {
+        name: "SI Crew",
+        description: "dancing club",
+        activities: ["Practice Session at 7pm"],
+    },
+    // Add more club data objects as needed
+];
+
+// Function to dynamically populate clubs section
+function populateClubsSection() {
+    const clubsSection = document.getElementById("clubs");
+
+    clubsData.forEach((club) => {
+        const clubDiv = document.createElement("div");
+        clubDiv.classList.add("club");
+
+        clubDiv.innerHTML = `
+            <h2>${club.name}</h2>
+            <p>${club.description}</p>
+            <ul class="activities">
+                ${club.activities.map((activity) => `<li>${activity}</li>`).join("")}
+            </ul>
+        `;
+
+        clubsSection.appendChild(clubDiv);
+    });
+}
+
+
+populateClubsSection();
+
+</script>
 </html>

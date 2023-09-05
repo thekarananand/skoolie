@@ -9,8 +9,11 @@ passStudentObject = {}
 
 # Create your views here.
 def clubs(request):
+    date=str(get_date())
     if request.method =="POST":
-        return render(request,"skoolie/clubs.html")
+        return render(request,"skoolie/clubs.html",{
+            "DATE" : date,
+        })
 
 def login(request):
     if request.method == "GET":
@@ -114,9 +117,10 @@ def attendance(request):
                 lst1.append(colouratt(PresentageAttendance(rollno, subject)))
             except Exception as e:
                 print(f"Error processing attendance for {subject}: {e}")
-
+        date=str(get_date())
+        
         return render(request, "skoolie/attendance.html", {
-            "DATE": "Mon, Sept 04",
+            "DATE": date,
             "CT_percentage": percentage[0],
             "CT_total": total[0],
             "CT_present": present[0],

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,9 +59,23 @@ header {
     <header>
         <h2>Clubs and Societies</h2>
     </header>
+=======
+{% extends "skoolie/navbar.html" %}
+{% block title %}
+Clubs | Skoolie
+{% endblock %}
+{% block JavaScript %}
+{% load static %}
+<script src="{% static 'skoolie/clubs.js' %}"></script>
+>>>>>>> Stashed changes
 
-    <section class="clubs" id="clubs">
+{% endblock %}
+{% block CONTENT %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'skoolie/clubs.css' %}">
+<section class="clubs" id="clubs">
     <!-- Clubs and Societies will be populated dynamically here -->
+<<<<<<< Updated upstream
     </section>
 
      
@@ -106,3 +121,7 @@ populateClubsSection();
 
 </script>
 </html>
+=======
+</section>
+{% endblock %}
+>>>>>>> Stashed changes

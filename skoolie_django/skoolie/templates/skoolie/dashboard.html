@@ -78,6 +78,12 @@ Dashboard | Skoolie
                 <p>Zeal meet up at 7pm</p>
                 <p>SI Crew meeting at 8:30pm</p>
 
+                <form action="{% url 'clubs' %}" method="POST">
+                    <!-- {% csrf_token %} -->
+                    <input type="hidden" name="rollno" value="{{ rollno }}">
+                    <input id="fnl" style="margin-left: 160px;font-weight: 500;padding:5px;background-color: #00ffe0;border:none;border-radius:30px;margin-top:63px;"type="submit" value="Know More..">
+                </form>
+
             </div>
         </div>
         <div class="item" id="upcom_events">
@@ -92,7 +98,7 @@ Dashboard | Skoolie
                         </span><br><span style="font-size: 30px;font-weight: bold;">12 days</span></p>
                 </div>
             </div>
-            <div class="attendance_reminder" style="background-color: {{ ATTENDANCE_SHADE }};">
+            <div class="attendance_reminder" style="background-color: {{ ATTENDANCE_SHADE }}">
                 <div class="heading">
                     <img src="{% static 'skoolie/icons/day_4341579.png' %}" alt="Logo"
                         style="display: inline;width:35px" class="logo">
